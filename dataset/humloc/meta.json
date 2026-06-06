@@ -1,0 +1,11 @@
+{
+  "name": "humloc",
+  "source": "MLGNC / HumanGo",
+  "num_nodes": 3106,
+  "num_undirected_edges": 15978,
+  "adj_nnz_directed": 31956,
+  "feature_dim": 32,
+  "num_labels": 14,
+  "avg_labels_per_node": 1.1851255893707275,
+  "has_explanation_gt": false
+}

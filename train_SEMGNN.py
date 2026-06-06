@@ -1034,7 +1034,7 @@ def main():
 
     # ---- Dataset ----
     parser.add_argument("--dataset", type=str, default="synthetic_anchor",
-                        choices=["synthetic_motif", "synthetic_anchor", "blogcatalog", "youtube"])
+                        choices=["synthetic_motif", "synthetic_anchor", "blogcatalog", "youtube","humloc"])
     parser.add_argument("--data_dir", type=str, default=None,
                         help="Path to dataset directory. Defaults to ./dataset/<dataset>.")
     parser.add_argument("--split_path", type=str, default=None,
