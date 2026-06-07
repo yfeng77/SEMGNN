@@ -23,9 +23,11 @@ Dataset and code of Self-Explainable Multi-Label Graph Neural Network (SEMGNN).
 │   └── data_process.py
 ├── data_gen/
 │   ├── gen_synthetic_anchor.py
-│   └── gen_synthetic_motif.py
+│   ├── gen_synthetic_motif.py
+│   └── prepare_humloc.py
 └── dataset/
     ├── blogcatalog/
+    ├── humloc/
     ├── synthetic_anchor/
     ├── synthetic_motif/
     └── youtube/
@@ -50,6 +52,7 @@ The training script expects datasets under:
 Supported datasets in the current code include:
 
 - `blogcatalog`
+- `humloc`
 - `youtube`
 - `synthetic_motif`
 - `synthetic_anchor`
