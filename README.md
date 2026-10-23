@@ -1,24 +1,36 @@
-# Self-Explainable Multi-Label Graph Neural Network for Correlated Evidence Attribution
+<div align="center">
 
-[![ICDM](https://img.shields.io/badge/ICDM-2026-8A2BE2)](#citation)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-PyG-EE4C2C)](https://pytorch-geometric.readthedocs.io/)
-[![Data](https://img.shields.io/badge/Data-included-2E8B57)](#datasets)
+# Self-Explainable Multi-Label Graph Neural Network<br>for Correlated Evidence Attribution
 
-**[Paper](#citation) · [Quick Start](#quick-start) · [Datasets](#datasets) · [Reproduce](#reproducing-the-paper) · [Citation](#citation)**
+***ICDM 2026***
+
+[![arXiv](https://img.shields.io/badge/arXiv-2608.27574-b31b1b?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2608.27574)
+[![ICDM](https://img.shields.io/badge/ICDM-2026-1f6feb)](#citation)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-PyG-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch-geometric.readthedocs.io/)
+
+[Quick Start](#quick-start) • [Datasets](#datasets) • [Results](#results) • [Citation](#citation)
+
+</div>
+
+<p align="center">
+  <img src="assets/motivation.png" width="95%">
+</p>
+
+> Official PyTorch implementation of **SEMGNN**, an end-to-end self-explainable multi-label GNN that jointly predicts node labels and identifies label-conditioned explanatory edges.
 
 ---
 
 ## Overview
 
-In multi-label node classification (MLNC), one node can carry several labels, and those labels are often correlated. Existing GNN explainers are mostly **post-hoc** and **single-label**: explaining each label independently misses evidence shared by related labels, while one explanation for all labels hides label-specific rationales.
+In multi-label node classification, one node can carry several labels, and those labels are often correlated. Existing GNN explainers are mostly **post-hoc** and **single-label**: explaining each label independently misses evidence shared by related labels, while one explanation for all labels hides label-specific rationales.
 
 We introduce **SEMGNN**, an end-to-end **self-explainable multi-label GNN** that jointly learns
 
 - a multi-label node classifier, and
 - a sparse, **label-conditioned edge-mask explainer**,
 
-under a single sufficiency–necessity–sparsity objective. Label–label correlations (built from training labels only) are used on both sides: to sharpen prediction, and to let positively related labels **share** explanatory evidence while weakly or negatively associated labels keep **distinct** rationales.
+under a single sufficiency–necessity–sparsity objective. Label–label correlations are used on both sides: to sharpen prediction, and to let positively related labels **share** explanatory evidence while weakly or negatively associated labels keep **distinct** rationales.
 
 <p align="center">
   <img src="assets/motivation.png" width="100%" alt="Motivation: correlated evidence attribution">
@@ -144,19 +156,6 @@ HumLoc is derived from the HumanGo data released with [MLGNC](https://github.com
 python data_gen/prepare_humloc.py --out_dir ./dataset/humloc
 ```
 
-## Reproducing the Paper
-
-The split is a stratified multi-label split (70 / 20 / 10) controlled by `--seed`. Results in the paper are averaged over three seeds; explanations are evaluated on a fixed set of 100 test nodes with K = 2.
-
-```bash
-# Main results (Tables II and III), one dataset at a time
-for DS in synthetic_anchor synthetic_motif blogcatalog youtube humloc; do
-  for SEED in 0 1 2; do
-    python train_SEMGNN.py --dataset $DS --seed $SEED --device cuda
-  done
-done
-```
-
 ### Ablations (Table IV, Fig. 5)
 
 | Variant in paper | Flags |
@@ -237,12 +236,5 @@ If you find this work useful, please cite:
 
 ## Acknowledgements
 
-This work was supported in part by the U.S. National Science Foundation under Grants IIS-2302786, IIS-2236579, and CMMI-2145571.
+This work was supported in part by the U.S. National Science Foundation under Grants Nos. IIS-2302786, IIS-2236579, and CMMI-2145571. The authors would like to thank Dr. Min Shi from the University of Louisiana at Lafayette for his support and comments on this research.
 
-## Contact
-
-Yingqi Feng — yfeng2016@fau.edu · Department of EECS, Florida Atlantic University
-
----
-
-IEEE International Conference on Data Mining (ICDM) · 2026
