@@ -11,6 +11,8 @@
 
 [Quick Start](#quick-start) • [Datasets](#datasets) • [Results](#results) • [Citation](#citation)
 
+</div>
+
 > Official PyTorch implementation of **SEMGNN**, an end-to-end self-explainable multi-label GNN that jointly predicts node labels and identifies label-conditioned explanatory edges.
 
 ---
