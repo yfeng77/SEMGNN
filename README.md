@@ -222,11 +222,11 @@ SEMGNN achieves the best GT F1/IoU on both synthetic benchmarks and the best Fid
 If you find this work useful, please cite:
 
 ```bibtex
-@inproceedings{feng2026semgnn,
-  title     = {Self-Explainable Multi-Label Graph Neural Network for Correlated Evidence Attribution},
-  author    = {Feng, Yingqi and Tang, Yufei and Zhu, Xingquan},
-  booktitle = {Proceedings of the IEEE International Conference on Data Mining (ICDM)},
-  year      = {2026}
+@article{feng2026self,
+  title={Self-Explainable Multi-Label Graph Neural Network for Correlated Evidence Attribution},
+  author={Feng, Yingqi and Tang, Yufei and Shi, Min and Zhu, Xingquan},
+  journal={arXiv preprint arXiv:2608.27574},
+  year={2026}
 }
 ```
 
